@@ -4,11 +4,11 @@ on:
   push:
     paths:
       - contents/**
-  workflow dispatch:
+  workflow_dispatch:
 
-  jobs:
-    build:
-      runs-on: windows-latest
+jobs:
+  build:
+    runs-on: windows-latest
       steps:
         - uses: actions/checkout@v2
         - uses: microsoft/powerplatform-actions/pack-solution@v0
@@ -19,4 +19,4 @@ on:
         - uses: actions/upload-artifact@v2
           with:
             name: packed-solution
-            path: out/
+            path: out/  
